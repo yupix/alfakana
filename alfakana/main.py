@@ -21,8 +21,10 @@ def add_dic(key, value, db_path):
         sql = "INSERT INTO dic (key, value) values (?,?)"
         try:
             conn.execute(sql, [key, value])
+            conn.commit()
         except sqlite3.IntegrityError:
             pass
+
 
 def sentence_kana(text, db_path):
     """
