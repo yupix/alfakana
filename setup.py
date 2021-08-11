@@ -9,7 +9,7 @@ with readme_file.open(encoding='utf-8') as fh:
 
 setup(
     name='alfakana',
-    version='0.0.1',
+    version='0.0.2',
     install_requires=["pysqlite3"],
     url='https://github.com/yupix/alfakana',
     author='yupix',
