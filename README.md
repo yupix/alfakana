@@ -28,3 +28,7 @@ db_path = './dic.db'
 print(alfakana.sentence_kana('私はTypeScriptが大好きです'), db_path)
 >>> 私はタイプ・スクリプトゥが大好きです
 ```
+
+## LICENSE
+
+[こちら](LICENSE)
