@@ -20,7 +20,7 @@ def add_dic(key, value, db_path):
     with sqlite3.connect(f'{db_path}') as conn:
         sql = "INSERT INTO dic (key, value) values (?,?)"
         try:
-            conn.execute(sql, [key, conn])
+            conn.execute(sql, [key, value])
         except sqlite3.IntegrityError:
             pass
 
