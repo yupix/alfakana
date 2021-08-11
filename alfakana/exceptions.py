@@ -1,0 +1,2 @@
+class NoSuchTable(Exception):
+    pass
