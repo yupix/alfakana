@@ -3,10 +3,31 @@ import sqlite3
 from alfakana.exceptions import NoSuchTable
 
 
+def add_dic(key, value, db_path):
+    """
+    与えられた`key`と`value`を元に与えられたデータベースに辞書を追加します。
+    Parameters
+    ----------
+    key : str
+        英単語を受け取ります
+    value : str
+        英単語の日本語(カタカナ)を受け取ります
+    Returns
+    -------
+    None : None
+        送信限定です。
+    """
+    with sqlite3.connect(f'{db_path}') as conn:
+        sql = "INSERT INTO dic (key, value) values (?,?)"
+        try:
+            conn.execute(sql, [key, conn])
+        except sqlite3.IntegrityError:
+            pass
+
 def sentence_kana(text, db_path):
     """
     Parameters
-    -------
+    ----------
     text : str
         カタカナに変換したい日本語を含んだ文字列を受け取ります
     db_path : str
